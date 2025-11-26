@@ -1,7 +1,7 @@
 ## Profile
 ✉ **Email** | bksong121212@gmail.com <br />
-📱 **Phone** | 010-4658-5892
-📄 **Notion** | 
+📱 **Phone** | 010-4658-5892 <br />
+📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
 
