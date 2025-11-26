@@ -1,3 +1,8 @@
+## Profile
+✉ **Email** | bksong121212@gmail.com <br />
+📱 **Phone** | 010-4658-5892
+📄 **Notion** | 
+
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
 
 <!--
