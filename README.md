@@ -42,12 +42,14 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 ### 내 역할 (팀장)
 
-1. 로그인, 회원가입 페이지 <br />
-2. 아이디 & 비밀번호 찾기 <br />
-3. 멀티 게임방 사용자 프로필 <br />
-4. 멀티게임 - LLM을 활용한 끝말잇기 <br />
-
-<img src="images/webnest/메인.png" alt="webnest_프로젝트_메인화면" width="700" />
+1. 로그인, 회원가입 구현 <br />
+2. OAuth2 소셜로그인 구현 <br />
+3. JWT 인증 <br />
+4. Redis refresh token 관리<br />
+5. OpenAI API 연동<br />
+6. WebSocket/STOMP 끝말잇기<br />
+   <br />
+   <img src="images/webnest/메인.png" alt="webnest_프로젝트_메인화면" width="600" />
 
 ### 핵심 기능
 
@@ -85,19 +87,20 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 ### 간략 시스템 구성도
 
-<img src="images/webnest/서비스설계.png" alt="webnest_서비스설계" width="700" />
+<br />
+<img src="images/webnest/서비스설계.png" alt="webnest_서비스설계" width="600" />
 
 ### 끝말잇기
 
-<img src="images/webnest/끝말잇기.png" alt="webnest_끝말잇기" width="700" />
+<img src="images/webnest/끝말잇기.png" alt="webnest_끝말잇기" width="600" />
 
 ### 로그인 화면
 
-<img src="images/webnest/로그인.png" alt="webnest_로그인" width="700" />
+<img src="images/webnest/로그인.png" alt="webnest_로그인" width="600" />
 
 ### ID/PW 찾기
 
-<img src="images/webnest/IDPW찾기.png" alt="webnest_ID_PW_찾기" width="700" />
+<img src="images/webnest/IDPW찾기.png" alt="webnest_ID_PW_찾기" width="600" />
 
 ## 프로젝트 #2
 
@@ -120,7 +123,7 @@ EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고빅�
 3. 마이페이지 - 과거 병원 방문이력 <br />
 4. 마이페이지 - 회원 탈퇴 <br />
 
-<img src="images/ev119/메인.png" alt="ev119_프로젝_메인화면" width="700" />
+<img src="images/ev119/메인.png" alt="ev119_프로젝_메인화면" width="600" />
 
 ### 핵심 기능
 
@@ -128,24 +131,24 @@ EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고빅�
 
 ### 간략 시스템 구성도
 
-<img src="images/ev119/시스템구성도.png" alt="ev119_시스템구성도" width="700" />
+<img src="images/ev119/시스템구성도.png" alt="ev119_시스템구성도" width="600" />
 
 ### 데이터베이스 구조
 
-<img src="images/ev119/ERDCloud.png" alt="ev119_ERDCloud" width="700" />
+<img src="images/ev119/ERDCloud.png" alt="ev119_ERDCloud" width="600" />
 
 ### 기능명세서
 
-<img src="images/ev119/기능명세서.png" alt="ev119_기능명세서" width="700" />
+<img src="images/ev119/기능명세서.png" alt="ev119_기능명세서" width="600" />
 
 ### UI/UX 가이드
 
-<img src="images/ev119/UIUX가이드.png" alt="ev119_UI_UX_가이드" width="700" />
+<img src="images/ev119/UIUX가이드.png" alt="ev119_UI_UX_가이드" width="600" />
 
 ### 계정관리
 
-<img src="images/ev119/계정관리.png" alt="ev119_계정관리" width="700" />
+<img src="images/ev119/계정관리.png" alt="ev119_계정관리" width="600" />
 
 ### 건강정보관리
 
-<img src="images/ev119/건강정보관리.png" alt="ev119_건강정보관리" width="700" />
+<img src="images/ev119/건강정보관리.png" alt="ev119_건강정보관리" width="600" />
