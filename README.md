@@ -2,7 +2,6 @@
 
 🧑 **Name** | SongByoungGuk <br />
 📧 **Email** | bksong121212@gmail.com <br />
-📱 **Phone** | 010-4658-5892 <br />
 
 ## Tech
 - Backend: Java, Spring Boot, JPA, MyBatis
