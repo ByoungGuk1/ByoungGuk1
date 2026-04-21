@@ -14,23 +14,21 @@
 
 ### WebNest
 - Repository
-  - [FrontEnd](https://github.com/ByoungGuk1/WebNest_front)
-  - [BackEnd](https://github.com/ByoungGuk1/webnest_spring)
+  [[Frontend Repo]](https://github.com/ByoungGuk1/WebNest_front) | [[Backend Repo]](https://github.com/ByoungGuk1/webnest_spring)
 - Teen programming web service
 - Role: login/signup, account recovery, LLM word-chain feature
 - Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
 
 ### EV119
 - Repository
-  - [FrontEnd](https://github.com/ByoungGuk1/ev119-react)
-  - [BackEnd](https://github.com/ByoungGuk1/ev119-spring)
+  [[Frontend Repo]](https://github.com/ByoungGuk1/ev119-react) | [[Backend Repo]](https://github.com/ByoungGuk1/ev119-spring)
 - Emergency information web service
 - Role: my page, health info, visit history, account management
 - Stack: Spring Boot, React, Oracle, Redis, JPA, JWT/OAuth2
 
 ## Links
 
-- 💼 **Portfolio** | <a href = "pdf/포트폴리오/종합.pdf" >포트폴리오</a>
+- 💼 **Portfolio** | <a href = "pdf/포트폴리오/종합.pdf" >Portfolio(pdf)</a>
 - 📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
