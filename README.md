@@ -4,23 +4,18 @@
 📧 **Email** | bksong121212@gmail.com <br />
 📱 **Phone** | 010-4658-5892 <br />
 
-### Tech
+## Tech
+Java, Spring Boot, React, Oracle, Redis, JWT/OAuth2, Docker
 
----
+## Projects
 
-- Java, Spring Boot, React, Oracle, Redis, JWT/OAuth2, Docker
-
-### Projects
-
----
-
-#### WebNest
+### WebNest
 
 - Teen programming web service
 - Role: login/signup, account recovery, LLM word-chain feature
 - Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
 
-#### EV119
+### EV119
 
 - Emergency information web service
 - Role: my page, health info, visit history, account management
