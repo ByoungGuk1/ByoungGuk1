@@ -5,18 +5,25 @@
 📱 **Phone** | 010-4658-5892 <br />
 
 ## Tech
-Java, Spring Boot, React, Oracle, Redis, JWT/OAuth2, Docker
+- Backend: Java, Spring Boot, JPA, MyBatis
+- Frontend: React
+- DB/Infra: Oracle, Redis, Docker
+- Auth/API: JWT, OAuth2, OpenAI
 
 ## Projects
 
 ### WebNest
-
+- Repository
+  - [FrontEnd](https://github.com/ByoungGuk1/WebNest_front)
+  - [BackEnd](https://github.com/ByoungGuk1/webnest_spring)
 - Teen programming web service
 - Role: login/signup, account recovery, LLM word-chain feature
 - Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
 
 ### EV119
-
+- Repository
+  - [FrontEnd](https://github.com/ByoungGuk1/ev119-react)
+  - [BackEnd](https://github.com/ByoungGuk1/ev119-spring)
 - Emergency information web service
 - Role: my page, health info, visit history, account management
 - Stack: Spring Boot, React, Oracle, Redis, JPA, JWT/OAuth2
