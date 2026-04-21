@@ -1,8 +1,35 @@
 ## Profile
 
-✉ **Email** | bksong121212@gmail.com <br />
+🧑 **NAME** | SongByoungGuk <br />
+📧 **Email** | bksong121212@gmail.com <br />
 📱 **Phone** | 010-4658-5892 <br />
-📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link
+
+### Tech
+
+---
+
+- Java, Spring Boot, React, Oracle, Redis, JWT/OAuth2, Docker
+
+### Projects
+
+---
+
+#### WebNest
+
+- Teen programming web service
+- Role: login/signup, account recovery, LLM word-chain feature
+- Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
+
+#### EV119
+
+- Emergency information web service
+- Role: my page, health info, visit history, account management
+- Stack: Spring Boot, React, Oracle, Redis, JPA, JWT/OAuth2
+
+## Links
+
+- 💼 **Portfolio** | <a href = "pdf/포트폴리오/종합.pdf" >포트폴리오</a>
+- 📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
 
