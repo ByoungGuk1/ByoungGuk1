@@ -14,17 +14,17 @@
 
 ### WebNest
 - Repository
-  [[Frontend Repo]](https://github.com/ByoungGuk1/WebNest_front) | [[Backend Repo]](https://github.com/ByoungGuk1/webnest_spring)
+  [Frontend Repo](https://github.com/ByoungGuk1/WebNest_front) | [Backend Repo](https://github.com/ByoungGuk1/webnest_spring)
 - Teen programming web service
 - Role: login/signup, account recovery, LLM word-chain feature
 - Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
 
 ### EV119
 - Repository
-  [[Frontend Repo]](https://github.com/ByoungGuk1/ev119-react) | [[Backend Repo]](https://github.com/ByoungGuk1/ev119-spring)
+  [Frontend Repo](https://github.com/ByoungGuk1/ev119-react) | [Backend Repo](https://github.com/ByoungGuk1/ev119-spring)
 - Emergency information web service
 - Role: my page, health info, visit history, account management
-- Stack: Spring Boot, React, Oracle, Redis, JPA, JWT/OAuth2
+- Stack: Spring Boot, React, Oracle, Redis, JPA, JWT / OAuth2
 
 ## Links
 
@@ -88,8 +88,8 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
   LLM 사용 시 데이터를 가져오지 못했는데에도 다음 코드가 실행되는상황
 
 - 해결 방법
-  Map을 통한 Cash 변수를 생성하여 값을 저장했습니다.
-  최대 3번까지 요청하며, 필요한 값인 단어와 설명 부분을Cash에 저장합니다.값을 정확하게 가지고 왔다면 설명을 바로 리턴해주고,
+  Map을 통한 Cashe 변수를 생성하여 값을 저장했습니다.
+  최대 3번까지 요청하며, 필요한 값인 단어와 설명 부분을 Cashe에 저장합니다.값을 정확하게 가지고 왔다면 설명을 바로 리턴해주고,
   값을 가져오지 못한 경우 확인을 위해 문자열 메세지를 바로 응답해 주었습니다.
 
 - 해당 경험을 통해 알게된 점
@@ -154,7 +154,7 @@ EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고빅�
 
 ### 핵심 기능
 
-입력된 사용자의 정보를 활용하여 응급 상황 발생시 적절한 조치 방법를 제공
+입력된 사용자의 정보를 활용하여 응급 상황 발생 시 적절한 조치 방법 제공
 
 ### 간략 시스템 구성도
 
