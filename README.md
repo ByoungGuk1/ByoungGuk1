@@ -4,6 +4,7 @@
 📧 **Email** | bksong121212@gmail.com <br />
 
 ## Tech
+
 - Backend: Java, Spring Boot, JPA, MyBatis
 - Frontend: React
 - DB/Infra: Oracle, Redis, Docker
@@ -12,6 +13,7 @@
 ## Projects
 
 ### WebNest
+
 - Repository
   [Frontend Repo](https://github.com/ByoungGuk1/WebNest_front) | [Backend Repo](https://github.com/ByoungGuk1/webnest_spring)
 - Teen programming web service
@@ -19,6 +21,7 @@
 - Stack: Spring Boot, React, Oracle, Redis, STOMP, OpenAI
 
 ### EV119
+
 - Repository
   [Frontend Repo](https://github.com/ByoungGuk1/ev119-react) | [Backend Repo](https://github.com/ByoungGuk1/ev119-spring)
 - Emergency information web service
@@ -113,7 +116,7 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 ### 간략 시스템 구성도
 
-<br />
+<img src="images/webnest/시스템구성도.png" alt="webnest_시스템구성도" width="600" />
 <img src="images/webnest/서비스설계.png" alt="webnest_서비스설계" width="600" />
 
 ### 끝말잇기
