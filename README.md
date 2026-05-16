@@ -2,6 +2,7 @@
 
 🧑 **Name** | SongByoungGuk <br />
 📧 **Email** | bksong121212@gmail.com <br />
+💻 **Velog** | https://velog.io/@bksong9903 <br />
 
 ## Tech
 
