@@ -2,7 +2,6 @@
 
 🧑 **Name** | SongByoungGuk <br />
 📧 **Email** | bksong121212@gmail.com <br />
-💻 **Velog** | https://velog.io/@bksong9903 <br />
 
 ## Tech
 
@@ -32,7 +31,8 @@
 ## Links
 
 - 💼 **Portfolio** | <a href = "pdf/포트폴리오/종합.pdf" >Portfolio(pdf)</a>
-- 📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link
+- 📄 **Notion** | https://www.notion.so/2b71ad5726a880249391e9c062cc1f53?source=copy_link <br />
+- 💻 **Velog** | https://velog.io/@bksong9903 <br />
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
 
