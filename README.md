@@ -50,7 +50,7 @@
 ## Project Details
 
 <details>
-<summary><strong>팀 프로젝트 · MARIA Account/Settlement 상세 보기</strong></summary>
+<summary><strong>팀 프로젝트 - MARIA 상세 보기</strong></summary>
 
 ### 프로젝트 개요
 
@@ -155,7 +155,7 @@
 </details>
 
 <details>
-<summary><strong>팀 프로젝트 #1 · WebNest 상세 보기</strong></summary>
+<summary><strong>팀 프로젝트 - WebNest 상세 보기</strong></summary>
 
 ## 팀 프로젝트 #1
 
@@ -216,7 +216,7 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 </details>
 
 <details>
-<summary><strong>팀 프로젝트 #2 · EV119 상세 보기</strong></summary>
+<summary><strong>팀 프로젝트 - EV119 상세 보기</strong></summary>
 
 ## 팀 프로젝트 #2
 
