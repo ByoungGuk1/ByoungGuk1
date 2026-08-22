@@ -31,21 +31,21 @@
 - Period/Team: 2026.07~2026.08 · 5명
 - Role: Account·Settlement 도메인, MyData 계좌 동기화 흐름
 - Key Topics: CAS, Redis ZSET Retry Queue, Ownership Token, Spring Batch, REQUIRES_NEW, Append-only Retry
-- Stack: Java 17, Spring Boot 3.5.16, MyBatis, MariaDB, PostgreSQL, Redis, Spring Batch, Thymeleaf
+- Stack: Java 17, Spring Boot 3.5.16, Spring Security, MyBatis, MariaDB, Redis, Spring Batch, Scheduler/Async, Thymeleaf
 
 ### WebNest | 알고리즘 학습·커뮤니티
 
 - Repository: [Frontend](https://github.com/NullPoint-team/WebNest_front) | [Backend](https://github.com/NullPoint-team/WebNest_back)
 - Period/Team: 2025.07~2025.11 · 5명 · 팀장
 - Role: 인증·회원 백엔드, API 연동 기준, WebSocket/STOMP·LLM 기능
-- Stack: Java, Spring Boot, Spring Security, JWT, OAuth2, MyBatis, Oracle, Redis, React
+- Stack: Java 17, Spring Boot 3.5.7, Spring Security, JWT, OAuth2, MyBatis, Oracle, Redis, React 19
 
 ### EV119 | 응급·건강 정보 관리 플랫폼
 
 - Repository: [Frontend](https://github.com/evee-EV119/EV119-react) | [Backend](https://github.com/evee-EV119/EV119-spring)
 - Period/Team: 2025.11~2025.12 · 4명
 - Role: 마이페이지, 건강정보·복용 약·알레르기·긴급 연락처 API
-- Stack: Java, Spring Boot, Spring Security, JWT, JPA/Hibernate, QueryDSL, Oracle, React
+- Stack: Java 17, Spring Boot 3.5.0, Spring Security, JWT, JPA/Hibernate, QueryDSL, Oracle, Redis, React 19
 
 ## Project Details
 
@@ -55,14 +55,15 @@
 ### 프로젝트 개요
 
 - RIA 계좌 심사부터 해외주식 입고·매도·가환전·확정산·세제혜택까지 처리하는 증권사 백오피스
-- MARIA, MyData, Return Securities가 DB를 공유하지 않고 REST API로 통신하는 다중 시스템 구조
+- MARIA, MyData(PostgreSQL), Return Securities가 DB를 공유하지 않고 REST API로 통신하는 다중 시스템 구조
 - Account 도메인과 Settlement 도메인, MyData 계좌 동기화 흐름 담당
 
 ### Account
 
 - 고객별 1계좌, 계좌번호 중복 방지, 5천만 원 합산 한도와 상태 전이를 서비스 검증과 DB 제약으로 이중 방어
 - `expectedCurrentLimit`를 조건으로 포함한 Compare-And-Set 방식으로 동시 한도 변경의 Lost Update 감지
-- DB Commit 후 MyData 동기화 실패를 Redis ZSET Retry Queue에 예약하고 단계적 Backoff로 재처리
+- APPLIED·OPENED·REJECTED 상태 전이와 재신청을 조건부 UPDATE로 제한하고, 상태·혜택·관리자 감사 이력을 현재 상태와 분리해 저장
+- DB Commit 후 MyData 동기화 실패를 Redis ZSET Retry Queue에 예약하고 1분·5분·15분·1시간 단계형 Backoff로 재처리
 - `lockToken`과 `taskToken`을 분리하고 Lua Script에서 비교·삭제·재예약을 원자적으로 수행해 오래된 Worker의 상태 덮어쓰기 차단
 
 ### Settlement
@@ -72,7 +73,9 @@
 - `ExecutionContext`에 커서를 저장하고 Keyset Pagination으로 PENDING Item을 100건씩 처리
 - Item별 `REQUIRES_NEW` 독립 트랜잭션으로 성공 건을 보존하고 실패 건만 기록·재처리
 - 기존 실패 행을 수정하지 않고 새 Item을 추가하는 Append-only Retry와 `FINALIZED` 재확인으로 추적성·멱등성 확보
-- 환율 API를 DB 트랜잭션 밖에서 조회하고, 같은 Batch 내 정상·실패 결과를 공유해 외부 호출과 Lock 점유 시간 감소
+- Batch 통계는 같은 Batch·Exchange의 가장 최근 Item을 현재 결과로 집계해 재처리 이력과 현재 상태를 구분
+- 환율 API를 DB 트랜잭션 밖에서 조회하고, 같은 Batch 내 동일 통화·기준일의 정상·실패 결과를 `ExecutionContext`에서 공유
+- 환율 데이터가 없는 경우 이전 날짜 탐색을 공통 Client에 일임해, 동일 조건 Item이 여러 건이어도 Batch 전체 외부 조회를 최대 8회로 제한
 
 ### 설계 한계와 개선 방향
 
@@ -160,22 +163,20 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 ### 사용 기술
 
-- Language : Java(JDK17), HTML, CSS, JavaScript <br />
-- Server, Cloud : Apache Tomcat 9.0 <br />
-- Framework : Spring Boot 3.2.x, React 18.x <br />
-- DB : Oracle 21C, Redis 8.x <br />
-- IDE : IntelliJ IDEA 2025.2.3, Visual Studio Code <br />
-- API, Library : STOMP(WebSocket), Swagger, coolSMS, OpenAI, Monaco Editor, Swiper API, Stream API,OAuth2, Spring Security, JWT <br />
-- DevOps, Tools : Git, GitHub, Docker, Figma, ERDCloud <br />
+- Backend: Java 17, Spring Boot 3.5.7, Spring Security, OAuth2 Client, MyBatis <br />
+- Data: Oracle 21C, Redis <br />
+- Frontend: React 19, JavaScript, Redux, styled-components <br />
+- Integration: JWT, WebSocket/STOMP, OpenAI API, Swagger/OpenAPI <br />
+- Tools: Git, GitHub, Docker, Figma, ERDCloud <br />
 
 ### 내 역할 (팀장)
 
-1. 로그인, 회원가입 구현 <br />
-2. OAuth2 소셜로그인 구현 <br />
-3. JWT 인증 <br />
-4. Redis refresh token 관리<br />
-5. OpenAI API 연동<br />
-6. WebSocket/STOMP 끝말잇기<br />
+1. Spring Security·JWT 기반 로그인·회원가입 및 Access/Refresh Token 분리 <br />
+2. Google·Naver·Kakao OAuth2 응답을 내부 회원·소셜 계정 모델로 변환 <br />
+3. Redis에 Refresh Token과 OAuth2 일회성 교환 Key 저장 <br />
+4. OpenAI API 단어 설명 기능과 로컬 Cache·재시도·Fallback 처리 <br />
+5. WebSocket/STOMP 기반 방 단위 끝말잇기 메시지 처리 <br />
+6. GitHub Organization·브랜치·일정·공통 API 연동 기준 관리 <br />
    <br />
    <img src="images/webnest/메인.png" alt="webnest_프로젝트_메인화면" width="600" />
 
@@ -183,35 +184,17 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 멀티게임 - LLM을 활용한 끝말잇기
 
-### 트러블슈팅 #1
+### 트러블슈팅 #1 · LLM 응답 실패와 반복 호출
 
-- 상황
-  LLM 사용 시 데이터를 가져오지 못했는데에도 다음 코드가 실행되는상황
+- 문제: 동일한 단어 설명이 반복 요청되고, 응답 구조가 비어 있거나 429·5xx·네트워크 오류가 발생할 때 후속 로직이 정상 결과를 가정할 수 있었습니다.
+- 해결: `ConcurrentHashMap`에 단어별 설명을 캐시하고, `choices→message→content`를 단계적으로 검증했습니다. 재시도 가능한 오류는 최대 3회 재요청하고, 최종 실패 시 고정된 Fallback 메시지를 반환했습니다.
+- 결과: 반복 외부 호출을 줄이고, 부분 응답과 외부 API 장애를 정상 결과와 분리했습니다.
 
-- 해결 방법
-  Map을 통한 Cache 변수를 생성하여 값을 저장했습니다.
-  최대 3번까지 요청하며, 필요한 값인 단어와 설명 부분을 Cache에 저장합니다.값을 정확하게 가지고 왔다면 설명을 바로 리턴해주고,
-  값을 가져오지 못한 경우 확인을 위해 문자열 메세지를 바로 응답해 주었습니다.
+### 트러블슈팅 #2 · OAuth2 Provider별 응답 차이
 
-- 해당 경험을 통해 알게된 점
-  API 사용 시 정해진 요청 경로에 정해진 요청 값을 정해진 타입으로요청해야 하고, 응답을 받는 경우에도 정해진 이름과 타입으로 응답을받아야 한다는 것을 알았습니다.
-  이전 OAuth2.0의 경우와 마찬가지로 값이 응답되기 전에 다음 로직을실행시켜버리는 비동기 문제가 발생 할 수 있기에 그 부분도 유의하며로직을 작성해야했습니다.
-  따라서 API를 사용할 경우, 요청을 위한 객체와 응답을 위한 객체, 두가지가 필요하다는 것을 알게 되었습니다.
-
-### 트러블슈팅 #2
-
-- 상황
-  소셜 회원 가입 시 기본 입력값이 정확하게 VO로 전달되지 않는 상황
-
-- 해결방법
-  OAuth2.0를 통해 들어오는 값을 데이터베이스에 저장하기 위해 만든 VO에 저장할 때,
-  닉네임 또는 Provider 이름을 사용하여 중복되지 않는 임의의 값을 저장해두었습니다.
-  그 후 데이터베이스에 사용자 등록을 마친 다음 바로 로그인이 적용되도록 해주었습니다.
-
-- 해당 경험을 통해 알게된 점
-  OAuth2.0의 경우 모든 사이트의 값이 동일한 값으로 전달되는 것이 아닌, 각 사이트에 정해진 이름으로 값을 전달해 주었습니다.
-  또한, 값을 전달받는 즉시 이름을 바꿔 저장하는 경우,비동기 문제가 발생하여 값이 제대로 저장되지 않을 수 있다는 것을 알게 되었습니다.
-  이를 통해 추후 값을 요청하고 응답하는 경우, 해당 로직이 동기적인지 비동기적인지 한차례 더 생각하게 되는 계기가 되었습니다.
+- 문제: Google·Naver·Kakao가 사용자 정보를 서로 다른 중첩 구조와 키 이름으로 제공하고, Kakao는 동의 상태에 따라 이메일을 제공하지 않을 수 있었습니다.
+- 해결: Provider별로 email·name·providerId를 추출해 내부 회원 모델로 표준화했습니다. 이메일이 없으면 `provider + providerId`로 기존 연결 계정을 찾고, 찾지 못하면 이메일 동의 화면으로 분기했습니다.
+- 결과: 외부 Provider의 응답 차이를 내부 회원·소셜 계정 모델에서 흡수하고, 재로그인·신규 가입·추가 동의 흐름을 분리했습니다.
 
 ### 간략 시스템 구성도
 
@@ -241,26 +224,30 @@ EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고 빅�
 
 ### 사용 기술
 
-- Language : Java(JDK17), HTML, CSS, JavaScript <br />
-- Server, Cloud : Apache Tomcat 9.0 <br />
-- Framework : Spring Boot 3.2.x, React 18.x <br />
-- DB : Oracle 21C, Redis 8.x <br />
-- IDE : IntelliJ IDEA 2025.2.3, Visual Studio Code <br />
-- API, Library : JPA, OAuth2, Spring Security, JWT, OpenAI,카카오 맵 API, 응급실 정보 API , 외상센터 정보 API, ...<br />
-- DevOps, Tools : Git, GitHub, Docker, Figma, ERDCloud <br />
+- Backend: Java 17, Spring Boot 3.5.0, Spring Security, JPA/Hibernate, QueryDSL <br />
+- Data: Oracle 21C, Redis <br />
+- Frontend: React 19, JavaScript, Redux, styled-components <br />
+- Integration: JWT, OAuth2, Swagger/OpenAPI, Kakao Map, 응급실·외상센터 공공 API <br />
+- Tools: Git, GitHub, Docker, Figma, ERDCloud <br />
 
 ### 내 역할
 
-1. 마이페이지 - 회원정보 수정, 비밀번호 변경 <br />
-2. 마이페이지 - 건강정보 조회 및 관리 <br />
-3. 마이페이지 - 과거 병원 방문이력 <br />
-4. 마이페이지 - 회원 탈퇴 <br />
+1. 마이페이지 회원정보 조회·수정과 비밀번호 변경 <br />
+2. 혈액형·신장·체중·질환 등 건강정보 조회·수정 <br />
+3. 복용 약·알레르기·긴급 연락처·과거 병원 방문이력 API <br />
+4. 회원 탈퇴 시 연관 Entity의 FK 의존 관계와 삭제 순서 처리 <br />
 
-<img src="images/ev119/메인.png" alt="ev119_프로젝_메인화면" width="600" />
+<img src="images/ev119/메인.png" alt="ev119_프로젝트_메인화면" width="600" />
 
-### 핵심 기능
+### 프로젝트 핵심 기능
 
 입력된 사용자의 정보를 활용하여 응급 상황 발생 시 적절한 조치 방법 제공
+
+### 트러블슈팅 · 회원 탈퇴 시 FK 제약조건 오류
+
+- 문제: 회원을 먼저 삭제하면 건강·질환·복용 약·알레르기·긴급 연락처·방문이력 등의 연관 데이터로 인해 Oracle FK 제약조건 오류가 발생했습니다.
+- 해결: Entity 연관관계와 SQL 로그를 따라 의존 데이터를 파악하고, 자식 데이터부터 삭제한 뒤 `flush()`로 SQL 실행 순서를 보장하고 마지막에 회원을 삭제했습니다.
+- 결과: 회원 탈퇴를 하나의 트랜잭션으로 처리하면서 FK 제약조건을 지키는 삭제 순서를 명시했습니다.
 
 ### 간략 시스템 구성도
 
