@@ -46,7 +46,7 @@ Here are some ideas to get you started:
 - 👯 I’m looking to collaborate on ...
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
-- 📫 How to reach me: ...
+- 📬 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
@@ -55,6 +55,9 @@ Here are some ideas to get you started:
 
 1. 10대를 대상으로, 프로그래밍을 처음 접하는 학생들도 부담 없이 들어올 수 있는 서비스
 2. 공공데이터를 활용하여 빠르게 응급실에 도착하고 빅데이터를 활용하여 간단한 응급처치에 대한 조언을 구할 수 있는 서비스
+
+<details>
+<summary><strong>팀 프로젝트 #1 · WebNest 상세 보기</strong></summary>
 
 ## 팀 프로젝트 #1
 
@@ -132,6 +135,11 @@ WebNest - 10대를 대상으로, 프로그래밍을 처음 접하는 학생들�
 
 <img src="images/webnest/IDPW찾기.png" alt="webnest_ID_PW_찾기" width="600" />
 
+</details>
+
+<details>
+<summary><strong>팀 프로젝트 #2 · EV119 상세 보기</strong></summary>
+
 ## 팀 프로젝트 #2
 
 EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고 빅데이터를 활용하여 간단한 응급처치에 대한 조언을 구할 수 있는 서비스
@@ -182,3 +190,5 @@ EV119 - 공공데이터를 활용하여 빠르게 응급실에 도착하고 빅�
 ### 건강정보관리
 
 <img src="images/ev119/건강정보관리.png" alt="ev119_건강정보관리" width="600" />
+
+</details>
