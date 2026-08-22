@@ -79,8 +79,7 @@
 - DB Commit과 Redis Task 등록 사이의 Dual Write 구간은 Transactional Outbox 도입 후보
 - Lock Watchdog·Lease 연장, Testcontainers 기반 장애 주입, Retry 운영 지표는 후속 개선 과제
 
-<details>
-<summary><strong>Account·Settlement 발표자료 67페이지 보기</strong></summary>
+---
 
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/d63146d8-bf22-43c1-81be-8814dae2dc55" />
 <img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/0d867fa7-1999-4600-918f-6e6b1f994d53" />
@@ -149,8 +148,6 @@
 <img width="1920" height="1080" alt="65" src="https://github.com/user-attachments/assets/cdf602e7-3d17-48b2-90e0-34bfd47597f0" />
 <img width="1920" height="1080" alt="66" src="https://github.com/user-attachments/assets/1d6f180c-a693-4168-b439-286d3c07ea5b" />
 <img width="1920" height="1080" alt="67" src="https://github.com/user-attachments/assets/d716910b-3afd-41f3-a6bf-da2fa413dc9c" />
-
-</details>
 
 </details>
 
