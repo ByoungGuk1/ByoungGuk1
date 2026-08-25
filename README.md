@@ -38,14 +38,14 @@
 - Repository: [Frontend](https://github.com/NullPoint-team/WebNest_front) | [Backend](https://github.com/NullPoint-team/WebNest_back)
 - Period/Team: 2025.07~2025.11 · 5명 · 팀장
 - Role: 인증·회원 백엔드, API 연동 기준, WebSocket/STOMP·LLM 기능
-- Stack: Java 17, Spring Boot 3.5.7, Spring Security, JWT, OAuth2, MyBatis, Oracle, Redis, React 19
+- Stack: Java 17, Spring Boot 3.5.7, Spring Security, JWT, OAuth2, MyBatis, Oracle, Redis, React 19, CRA
 
 ### EV119 | 응급·건강 정보 관리 플랫폼
 
 - Repository: [Frontend](https://github.com/evee-EV119/EV119-react) | [Backend](https://github.com/evee-EV119/EV119-spring)
 - Period/Team: 2025.11~2025.12 · 4명
 - Role: 마이페이지, 건강정보·복용 약·알레르기·긴급 연락처 API
-- Stack: Java 17, Spring Boot 3.5.0, Spring Security, JWT, JPA/Hibernate, QueryDSL, Oracle, Redis, React 19
+- Stack: Java 17, Spring Boot 3.5.0, Spring Security, JWT, JPA/Hibernate, QueryDSL, Oracle, Redis, React 19, CRA
 
 ## Project Details
 
