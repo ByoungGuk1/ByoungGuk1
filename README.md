@@ -30,7 +30,7 @@
 - Repository: [returns-7/maria](https://github.com/returns-7/maria)
 - Period/Team: 2026.07~2026.08 · 5명
 - Role: Account·Settlement 도메인, MyData 계좌 동기화 흐름
-- Key Topics: CAS, Redis ZSET Retry Queue, Ownership Token, Spring Batch, REQUIRES_NEW, Append-only Retry
+- Key Topics: CAS, Redis ZSET Retry Queue, Spring Batch, REQUIRES_NEW, Append-only Retry
 - Stack: Java 17, Spring Boot 3.5.16, Spring Security, MyBatis, MariaDB, Redis, Spring Batch, Scheduler/Async, Thymeleaf
 
 ### WebNest | 알고리즘 학습·커뮤니티
